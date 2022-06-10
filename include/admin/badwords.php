@@ -84,7 +84,7 @@
         phorum_admin_error($error);
     }
 
-    if($_GET["curr"] && $_GET["delete"]){
+    if(isset($_GET["curr"]) && isset($_GET["delete"])){
 
         ?>
 
