@@ -106,7 +106,7 @@
 
         // load bad-words-list
         $banlists=phorum_db_get_banlists();
-        $bad_words=$banlists[PHORUM_BAD_WORDS];
+        $bad_words = isset($banlists[PHORUM_BAD_WORDS]) ? $banlists[PHORUM_BAD_WORDS] : array();
 
         include_once "./include/admin/PhorumInputForm.php";
 
