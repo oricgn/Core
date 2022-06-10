@@ -92,7 +92,7 @@ class PhorumInputForm
         if (preg_match('!^.*/mods/([^/]+)/.+$!', $bt[2]['file'], $m)) {
             $module = $m[1];
             if (isset($GLOBALS['PHORUM']['mods'][$module])) {
-                return $module;
+                return htmlspecialchars($module);
             }
         }
 
@@ -123,7 +123,7 @@ class PhorumInputForm
 
         if ($this->module === null || $this->module != $module) {
             $this->addbreak('Configuration for module ' .
-                            '"' . htmlspecialchars($module) . '"');
+                            '"' . $module . '"');
             $this->module = $module;
         }
     }
