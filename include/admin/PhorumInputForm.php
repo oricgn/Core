@@ -459,8 +459,7 @@ class PhorumInputForm
 
     public function checkbox($name, $value, $caption, $checked = 0, $extra = '')
     {
-        ++self::$checkidx;
-        $id = "admin_checkbox_self::$checkidx";
+        $id = "admin_checkbox_self::" . ++self::$checkidx;
 
         $is_checked = (!empty($checked)) ? 'checked="checked"' : '';
         $label_caption = (!empty($caption)) ? "&nbsp;<label for=\"$id\">$caption</label>" : '';
