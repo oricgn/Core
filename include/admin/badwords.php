@@ -84,7 +84,7 @@
         phorum_admin_error($error);
     }
 
-    if($_GET["curr"] && $_GET["delete"]){
+    if(isset($_GET["curr"]) && isset($_GET["delete"])){
 
         ?>
 
@@ -106,7 +106,7 @@
 
         // load bad-words-list
         $banlists=phorum_db_get_banlists();
-        $bad_words=$banlists[PHORUM_BAD_WORDS];
+        $bad_words = isset($banlists[PHORUM_BAD_WORDS]) ? $banlists[PHORUM_BAD_WORDS] : array();
 
         include_once "./include/admin/PhorumInputForm.php";
 
